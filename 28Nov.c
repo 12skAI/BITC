@@ -27,3 +27,67 @@ int main(){
     return 0;
 }
 */
+
+/*
+fibanaci sequence generation
+1 2 3 5 8 13 21 34 .....
+
+TODO this is homework
+#include <stdio.h>
+
+int main(){
+    
+    return 0;
+}
+*/
+
+/*
+Compute nCr
+
+
+#include <stdio.h>
+
+int factorial(int n){
+    if (n==0){
+        return 1;
+    }
+    return n*factorial(n-1);
+}
+
+int selection(int n, int r){
+    if (r>n){
+        printf("r cannot be greater than n");
+        return -1;
+    }
+    int val;
+    val = factorial(n)/(factorial(n-r)*factorial(r));
+    return val;
+}
+
+int main(){
+    int n, r;
+    printf("Enter n r: ");
+    scanf("%d", &n);
+    scanf("%d", &r);
+    printf("%d Choose %d = %d",n, r, selection(n, r));
+    return 0;
+}
+*/
+
+/*
+Swapping two variables without using a temporary 3rd variable and call by reference in a function
+*/
+#include <stdio.h>
+
+void swap(int* a, int* b){
+    *a = *a + *b;
+    *b = *a - *b;
+    *a = *a - *b;
+}
+
+int main(){
+    int a=2, b=5;
+    swap(&a, &b);
+    printf("a: %d, b: %d", a, b);
+    return 0;
+}
