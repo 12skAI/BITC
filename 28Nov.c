@@ -76,6 +76,12 @@ int main(){
 
 /*
 Swapping two variables without using a temporary 3rd variable and call by reference in a function
+
+1. What a pointer is
+A pointer is just an integer that stores a memory address.
+Not the value. The location of the value.
+and we get the address of a variable x by &x, and we get value at an address y by *y.
+datatype of pointer is int*, float*, etc.
 */
 #include <stdio.h>
 
@@ -83,6 +89,7 @@ void swap(int* a, int* b){
     *a = *a + *b;
     *b = *a - *b;
     *a = *a - *b;
+    return;
 }
 
 int main(){
