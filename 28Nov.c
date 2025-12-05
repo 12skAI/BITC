@@ -33,13 +33,33 @@ fibanaci sequence generation
 1 2 3 5 8 13 21 34 .....
 
 TODO this is homework
+
+think like this: fib(5) (which is 6th position) is like: fib(4) + fib(3) which is: 
+(fib(3) + fib(2)) + (fib(2) + fib(1)) which is: 
+((fib(2) + fib(1)) + (fib(1) + fib(0))) + ((fib(1) + fib(0)) + fib(1)) which is:
+(((fib(1) + fib(0)) + fib(1)) + (fib(1) + fib(0))) + ((fib(1) + fib(0)) + fib(1)) which finally is:
+1 + 0 + 1 + 1 + 0 + 1 + 0 + 1 = 5
+*/
+
 #include <stdio.h>
 
+int fib(int n){
+    if(n<=1){
+        return n;
+    }
+    return fib(n-1) + fib(n-2);
+}
+
 int main(){
-    
+    int n;
+    printf("Enter n: ");
+    scanf("%d", &n);
+    for(int i=0;i<n;i++){
+        printf("%d, ", fib(i));
+    }
     return 0;
 }
-*/
+
 
 /*
 Compute nCr
@@ -50,6 +70,7 @@ Compute nCr
 int factorial(int n){
     if (n==0){
         return 1;
+        //here the program stops
     }
     return n*factorial(n-1);
 }
@@ -83,18 +104,18 @@ Not the value. The location of the value.
 and we get the address of a variable x by &x, and we get value at an address y by *y.
 datatype of pointer is int*, float*, etc.
 */
-#include <stdio.h>
+// #include <stdio.h>
 
-void swap(int* a, int* b){
-    *a = *a + *b;
-    *b = *a - *b;
-    *a = *a - *b;
-    return;
-}
+// void swap(int* a, int* b){
+//     *a = *a + *b;
+//     *b = *a - *b;
+//     *a = *a - *b;
+//     return;
+// }
 
-int main(){
-    int a=2, b=5;
-    swap(&a, &b);
-    printf("a: %d, b: %d", a, b);
-    return 0;
-}
+// int main(){
+//     int a=2, b=5;
+//     swap(&a, &b);
+//     printf("a: %d, b: %d", a, b);
+//     return 0;
+// }
